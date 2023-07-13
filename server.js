@@ -12,7 +12,7 @@ dotenv.config();
 connectDB();
 
 // rest object
-const app = express()
+const app = express();
 
 // middleware
 app.use(express.json());
@@ -20,10 +20,13 @@ app.use(cors());
 app.use(morgan("dev"));
 
 // test routes
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
+//Routes
+const authRoute = require("./routes/authRoutes");
+app.use("/api/v1/auth", authRoute);
 //port
 const PORT = process.env.PORT || 8080;
 // listen
