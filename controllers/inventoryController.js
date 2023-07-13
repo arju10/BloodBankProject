@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const inventoryModel = require("../models/inventoryModel");
 const userModel = require("../models/userModel");
 
-// CREATE INVENTORY
+// CREATE INVENTORY => ("/api/v1/inventory/create-inventory") [POST]
 const createInventoryController = async (req, res) => {
     try {
       const { email } = req.body;
@@ -93,6 +93,31 @@ const createInventoryController = async (req, res) => {
     }
   };
   
+  // GET ALL BLOOD RECORDS => ("/api/v1/inventory/get-inventory") [GET]
+const getInventoryController = async (req, res) => {
+  try {
+    const inventory = await inventoryModel
+      .find({
+        organization: req.body.userId,
+      })
+      .populate("donar")
+      .populate("hospital")
+      .sort({ createdAt: -1 });
+    return res.status(200).send({
+      success: true,
+      message: "get all records successfully",
+      inventory,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: "Error In Get All Inventory",
+      error,
+    });
+  }
+};
   module.exports = {
-    createInventoryController
+    createInventoryController,
+    getInventoryController
   };
