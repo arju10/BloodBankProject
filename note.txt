@@ -1,0 +1,21 @@
+1.  npm init
+    - entry point: server.js
+2.  npm install express
+3.  open terminal
+    - node server.js
+4.  npm install mongodb
+5.  mongodb_URL:    
+6.  npm i nodemon
+7.  package.json
+     -  "scripts": {
+           "server":"nodemon server.js"
+            },
+        -- npm run server
+8.  npm i colors
+9.  npm i cors
+10. npm i dotenv
+11. npm i mongoose
+12. npm i morgan
+13. npm i bcryptjs
+14. npm i concurrently
+15. npm i jsonwebtoken
