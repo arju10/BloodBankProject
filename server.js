@@ -26,7 +26,9 @@ app.get("/", (req, res) => {
 
 //Routes
 const authRoute = require("./routes/authRoutes");
+const inventoryRoute = require("./routes/inventoryRoutes");
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/inventory", inventoryRoute)
 //port
 const PORT = process.env.PORT || 8080;
 // listen
