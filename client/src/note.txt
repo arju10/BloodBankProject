@@ -1,0 +1,15 @@
+1. npx create-react-app project_name
+2. Bootstrap
+3. npm i react-router-dom
+4. components >>> reuseable components
+5. pages => routing related pages will be there
+6. redux => state management solution , global state will be there
+7. services => functions will be there
+8. Now, enable the ROUTING on the Application
+    - index.js:
+        import {BrowserRouter} from "react-router-dom";
+
+         <BrowserRouter>
+             <App />
+        </BrowserRouter>
+9.
